@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome to PBD</title>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-glmol-component/dist/aframe-glmol-component.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-camera look-controls wasd-controls>
+    </a-camera>
+
+
+    <a-entity position="0 0.4 -6">
+      <a-plane position="-10 5 -6" rotation="0 90 0" height="10" width="40" color="#373737"></a-plane>
+      <a-plane position="10 5 -6" rotation="0 -90 0" height="10" width="40" color="#373737"></a-plane>
+      <a-plane position="0 5 -12" rotation="0 0 0" height="10" width="40" color="#373737"></a-plane>
+      <a-plane position="0 5 12" rotation="0 180 0" height="10" width="40" color="#373737"></a-plane>
+      <a-plane position="0 10 -6" rotation="90 0" height="40" width="20" color="#373737"></a-plane>
+      <a-plane position="0 0 -6" rotation="-90 0" height="40" width="20" color="#373737"></a-plane>
+      <!--CYLINDER-->
+      <a-cylinder position="0 0.4 -6.5" height="0.5" radius="3" color="#BBBBBB"></a-cylinder>
+      <!-- Protein -->
+      <a-entity scale="0.2 0.2 0.2" position="0 3.8 -6.5" animation="property: rotation; easing: linear; to: 0 360 0; loop: true; dur: 10000">
+      <a-entity class="interact" >
+        <a-entity id="hemo"
+                  glmol="molId: pdb:1SI4; nb: nb_sphere; hetatmMode: ballAndStick2; packing: true; base: nuclStick;
+        width: 0.001; height: 0.001; depth: 0.001" visible=""></a-entity>
+      </a-entity>
+    </a-entity>
+
+      
+    </a-entity>
+
+    <!--WELCOME SIGN-->
+    <a-image id="welcome" src="image/INTRO.png" position="0 2 -2.3" width="4.8" height="3">
+    </a-image>
+
+    <!--3D MODEL SIGN-->
+    <a-image id="welcome" src="image/HEMOGLOBIN.png" scale="0.3 0.3 0.3" position="0 1 -9" rotation="-10 0 0" width="4.8" height="3">
+    </a-image>
+    <a-image id="welcome" src="image/HEMOGLOBIN.png" scale="0.3 0.3 0.3" position="-3.2 1 -12.5" rotation="-10 -90 0" width="4.8" height="3">
+    </a-image>
+    <a-image id="welcome" src="image/HEMOGLOBIN.png" scale="0.3 0.3 0.3" position="3.2 1 -12.5" rotation="-10 90 0" width="4.8" height="3">
+    </a-image>
+
+    <!--EXPLANATION SIGN-->
+    <a-image id="welcome" src="image/3D.png" position="-9.9 2.5 -13" rotation="0 90 0" width="4.8" height="3">
+    </a-image>
+
+    <!--CREATION SIGN-->
+    <a-image id="welcome" src="image/importance.png" position="9.9 2.5 -13" rotation="0 -90 0" width="4.8" height="3">
+    </a-image>
+    <a-entity laser-controls></a-entity>
+
+    <!-- TABLES -->
+
+  <!-- <a-entity>
+    <a-box width="1.5" height="0.1" depth="1.5" position="-5 1 -7" color="#77311D">
+      <a-box widwth="0.08" height="0.95" depth="0.08" position="-0.71 -0.5 0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="0.71 -0.5 -0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="-0.71 -0.5 -0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="0.71 -0.5 0.71" color="#77311D"></a-box>
+    </a-box>
+    <a-box width="1.5" height="0.1" depth="1.5" position="5 1 -7" color="#77311D">
+      <a-box width="0.08" height="0.95" depth="0.08" position="-0.71 -0.5 0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="0.71 -0.5 -0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="-0.71 -0.5 -0.71" color="#77311D"></a-box>
+      <a-box width="0.08" height="0.95" depth="0.08" position="0.71 -0.5 0.71" color="#77311D"></a-box>
+    </a-box>
+  </a-entity> -->
+
+  </a-scene>
+
+  <!-- <a-entity id="heart-model" gltf-model="Heart.gltf" position="0 1.5 -5"
+    scale="0.01 0.01 0.01"</a-entity> -->
+
+  <script src="game.js"></script>
+</body>
+</html>
